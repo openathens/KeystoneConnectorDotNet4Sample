@@ -1,4 +1,5 @@
 ﻿using System.IdentityModel.Claims;
+using System.Net;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
@@ -16,6 +17,7 @@ namespace OpenAthensKeystoneDotNet4Sample
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.NameIdentifier;
+            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
         }
     }
 }
